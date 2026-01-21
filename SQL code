@@ -14,3 +14,19 @@ order_id int not null,
 pizza_id text not null,
 quantity int not null,
 primary key(order_details_id));
+
+
+-- Identify the most common pizza size ordered
+
+SELECT 
+    pizzas.size,
+    COUNT(order_details.order_details_id) AS order_count
+FROM
+    pizzas
+        JOIN
+    order_details ON pizzas.pizza_id = order_details.pizza_id
+GROUP BY pizzas.size
+ORDER BY order_count DESC;
+
+-- IN THIS TABLE I USE ONLY SINGLE JOIN AND USE GROUP BY 
+-- IN THIS QUERY I GET BETTER UNDERSTANDING ON HOW USE JOIN, GROUP BY AND ORDER BY IN SAME QUERY
