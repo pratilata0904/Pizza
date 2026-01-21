@@ -1,1 +1,1 @@
-# Pizza
+# Pizza Sales Project - SQL
